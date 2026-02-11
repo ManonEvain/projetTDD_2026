@@ -3,7 +3,8 @@
 Votre fichier README.md doit contenir les informations suivantes :  
 - Informations sur votre code :  
     - Version de python utilisée    
-    - Packages python, dépendances et versions  
+    - Packages python, dépendances et versions
+    - Choix du style docstrings 
 
 - Commande d'éxécution de votre code  
     - Création d'un environnement virtuel   
