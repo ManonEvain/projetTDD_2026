@@ -4,19 +4,22 @@ Pour lancer le projet :
 
 1. Installer les requirements 
 ```
-pip install -r requirements.txt
+pip install poetry
+poetry install --no-root
 ```
 
-2. Lancer le menu principal : 
+2. Lancer l'environnement virtuel 
+```
+python -m venv venv
+```
+
+3. Lancer le menu principal : 
 ```
 python -m main
 ```
 
-3. Lancer les tests (avec pytest) : 
+4. Lancer les tests (avec pytest) : 
 ```
 pytest -v
-```
-
-```
 pytest --cov=src/ tests/ 
 ```

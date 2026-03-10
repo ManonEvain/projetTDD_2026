@@ -17,3 +17,6 @@ venv/
 .idea/
 *.sublime-project
 *.sublime-workspace
+
+# Poetry
+poetry.lock

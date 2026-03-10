@@ -1,0 +1,43 @@
+[project]
+name = "Exemple"
+version = "0.1.0"
+description = "Mini projet Python exemple pour PTD 2026"
+authors = [
+    { name="Manon Evain" }
+]
+packages = [
+    { include = "src"}
+]
+requires-python = ">=3.10"
+
+# Dépendances du projet
+[tool.poetry.dependencies]
+python = "^3.10"
+pytest = "^7.0"
+pytest-cov = "^7.0"
+python-dotenv = "^1.0.0"
+
+# Formatage automatique avec Black
+[tool.black]
+line-length = 88
+target-version = ["py310"]
+
+# Tri des imports avec isort
+[tool.isort]
+profile = "black"
+
+# Linter Flake8
+[tool.flake8]
+max-line-length = 88
+ignore = ["E203", "W503"] 
+exclude = [".git", "__pycache__", "venv", ".venv", "build", "dist"]
+
+# Docstring style avec pydocstyle
+[tool.pydocstyle]
+convention = "numpy"
+
+# Pytest options
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q --tb=short"
+testpaths = ["tests"]
