@@ -1,14 +1,22 @@
 # Présentation de votre projet 
 
-Votre fichier README.md doit contenir les informations suivantes :  
-- Informations sur votre code :  
-    - Version de python utilisée    
-    - Packages python, dépendances et versions
-    - Choix du style docstrings  
-    - Choix du linter  
-    - Choix du formatter (optionnel)  
+Pour lancer le projet : 
 
-- Commande d'éxécution de votre code  
-    - Création d'un environnement virtuel   
-    - Lancement de votre application
-    - Commandes correspondantes aux tests  
+1. Installer les requirements 
+```
+pip install -r requirements.txt
+```
+
+2. Lancer le menu principal : 
+```
+python -m main
+```
+
+3. Lancer les tests (avec pytest) : 
+```
+pytest -v
+```
+
+```
+pytest --cov=src/ tests/ 
+```
