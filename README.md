@@ -2,15 +2,16 @@
 
 Pour lancer le projet : 
 
-1. Installer les requirements 
+1. Lancer l'environnement virtuel 
+```
+python -m venv venv
+source venv/bin/activate
+```
+
+2. Installer les requirements 
 ```
 pip install poetry
 poetry install --no-root
-```
-
-2. Lancer l'environnement virtuel 
-```
-python -m venv venv
 ```
 
 3. Lancer le menu principal : 
@@ -22,4 +23,9 @@ python -m main
 ```
 pytest -v
 pytest --cov=src/ tests/ 
+```
+
+5. Désactiver l'environnement virtuel 
+```
+deactivate
 ```
