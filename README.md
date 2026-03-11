@@ -21,6 +21,7 @@ python -m main
 
 4. Lancer les tests (avec pytest) : 
 ```
+export PYTHONPATH=$PYTHONPATH:$(pwd)/src
 pytest -v
 pytest --cov=src/ tests/ 
 ```
