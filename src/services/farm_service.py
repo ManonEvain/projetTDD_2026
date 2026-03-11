@@ -3,7 +3,7 @@ from src.models.chicken import Chicken
 
 
 class FarmService:
-    """Service to manage animals in the zoo."""
+    """Service to manage animals in the farm."""
 
     def __init__(self, repository):
         self.repository = repository
@@ -13,8 +13,8 @@ class FarmService:
         dog = Dog(name, age)
         self.repository.add(dog)
 
-    def add_cat(self, name: str, age: int):
-        """Add a cat to the zoo."""
+    def add_chicken(self, name: str, age: int):
+        """Add a chicken to the zoo."""
         chicken = Chicken(name, age)
         self.repository.add(chicken)
 

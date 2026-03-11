@@ -22,7 +22,7 @@ def principal_view():
         elif choice == "2":
             name = input("Nom : ")
             age = int(input("Age : "))
-            service.add_cat(name, age)
+            service.add_chicken(name, age)
         elif choice == "3":
             for a in service.list_animals():
                 print(a.description())
