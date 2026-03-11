@@ -14,7 +14,7 @@ class FarmService:
         self.repository.add(dog)
 
     def add_chicken(self, name: str, age: int):
-        """Add a chicken to the zoo."""
+        """Add a chicken to the farm."""
         chicken = Chicken(name, age)
         self.repository.add(chicken)
 
