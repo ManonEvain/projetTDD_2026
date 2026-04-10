@@ -4,4 +4,6 @@ def show_menu():
     print("2 - Ajouter un poulet")
     print("3 - Voir les animaux")
     print("4 - Faire parler les animaux")
-    print("5 - Quitter")
+    print("5 - Ajouter un ensemble d'animaux")
+    print("6 - Exporter l'ensemble des animaux de la ferme")
+    print("7 - Quitter")

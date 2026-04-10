@@ -1,12 +1,19 @@
 from src.models.dog import Dog
 from src.models.chicken import Chicken
 
+from src.utils_files.csv_importer import CSVImporter
+from src.utils_files.csv_exporter import CSVExporter
+from src.utils_files.detector import FormatterDetector
+
 
 class FarmService:
     """Service to manage animals in the farm."""
 
     def __init__(self, repository):
         self.repository = repository
+        self.importer = CSVImporter()
+        self.detector = FormatterDetector()
+        self.exporter = CSVExporter()
 
     def add_dog(self, name: str, age: int):
         """Add a dog to the zoo."""
@@ -17,6 +24,23 @@ class FarmService:
         """Add a chicken to the farm."""
         chicken = Chicken(name, age)
         self.repository.add(chicken)
+
+    def add_animals(self, file_path: str):
+        """Add a list of animals to the farm"""
+        try:
+            rows, headers = self.importer.import_file(file_path)
+            formatter = self.detector.detect(headers)
+
+            for row in rows:
+                animal = formatter.format(row)
+                self.repository.add(animal)
+        except FileNotFoundError as e:
+            print(f"❌ Erreur : {e}")
+
+    def export_animals(self, file_path: str):
+        """Export all animals of the farm in csv"""
+        animals = self.repository.get_all()
+        self.exporter.export(file_path, animals)
 
     def list_animals(self):
         """Return all animals."""

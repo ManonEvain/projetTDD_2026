@@ -28,6 +28,12 @@ def principal_view():
                 print(a.description())
         elif choice == "4":
             service.animals_speak()
-        elif choice == "5":
+        elif choice == '5':
+            file = input("Fichier :")
+            service.add_animals(file)
+        elif choice == '6':
+            file = input("Nom du fichier :")
+            service.export_animals(file)
+        elif choice == "7":
             print("Au revoir !")
             break
