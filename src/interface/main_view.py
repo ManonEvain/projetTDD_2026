@@ -1,15 +1,24 @@
+import os 
+from dotenv import load_dotenv
+
 from src.interface.cli import show_menu
 from src.repository.animal_repository import AnimalRepository
 from src.services.farm_service import FarmService
-
 from src.utils.utils import welcome
+
+
+load_dotenv()
 
 
 def principal_view():
     repository = AnimalRepository()
     service = FarmService(repository)
 
+    chemin = os.path.join(os.getenv("data_path"), os.getenv("import_files"))
+
     welcome()
+
+    service.add_animals(chemin)
 
     while True:
         show_menu()
