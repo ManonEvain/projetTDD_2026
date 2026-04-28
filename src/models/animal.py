@@ -34,4 +34,4 @@ class Animal:
         str
             Description of the animal.
         """
-        return f"{self.name} ({self.age} ans)"
+        return f"{self.__class__.__name__} : {self.name} ({self.age} ans)"
