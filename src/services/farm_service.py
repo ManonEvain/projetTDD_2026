@@ -18,12 +18,12 @@ class FarmService:
     def add_dog(self, name: str, age: int):
         """Add a dog to the zoo."""
         dog = Dog(name, age)
-        self.repository.add(dog)
+        self.repository.add_animal(dog)
 
     def add_chicken(self, name: str, age: int):
         """Add a chicken to the farm."""
         chicken = Chicken(name, age)
-        self.repository.add(chicken)
+        self.repository.add_animal(chicken)
 
     def add_animals(self, file_path: str):
         """Add a list of animals to the farm"""
@@ -33,13 +33,13 @@ class FarmService:
 
             for row in rows:
                 animal = formatter.format(row)
-                self.repository.add(animal)
+                self.repository.add_animal(animal)
         except FileNotFoundError as e:
             print(f"❌ Erreur : {e}")
 
     def export_animals(self, file_path: str):
         """Export all animals of the farm in csv"""
-        animals = self.repository.get_all()
+        animals = self.repository.get_all_animal()
         self.exporter.export(file_path, animals)
 
     def list_animals(self):
